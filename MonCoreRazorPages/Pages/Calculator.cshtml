@@ -1,0 +1,32 @@
+﻿@page
+@model MonCoreRazorPages.Pages.CalculatorModel
+@{
+    ViewData["Title"] = "Calculator";
+    string money = "c";
+}
+
+<header class="jumbotron">
+    <h1>Derek's Currency Converter</h1>
+    <p class="lead">
+        This program will convert money entered in pounds
+        to the equivalent euros
+    </p>
+</header>
+<main>
+    <form class="form-row" method="Post">
+        <div class="form-group col-lg-3">
+
+            <label for="pounds">Enter British Pounds (£)</label>
+            <input type="number" class="form-control" 
+                   id="pounds" asp-for="Pounds" value="100" required />
+            
+            <label for="euros">Calculated Euros (&euro;)</label>
+            <input type="text" id="euros" class="form-control" 
+                   value="@Model.Euros.ToString(money)" readonly />
+            <br/>
+            <button class="btn btn-success" type="submit">Calculate</button>
+            
+        </div>
+    </form>
+</main>
+
