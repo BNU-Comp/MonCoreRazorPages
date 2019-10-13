@@ -2,13 +2,12 @@
 @model MonCoreRazorPages.Pages.CalculatorModel
 @{
     ViewData["Title"] = "Calculator";
-    string money = "c";
 }
 
 <header class="jumbotron">
     <h1>Derek's Currency Converter</h1>
     <p class="lead">
-        This program will convert money entered in pounds
+        This program will convert money entered in whole pounds
         to the equivalent euros
     </p>
 </header>
@@ -18,11 +17,11 @@
 
             <label for="pounds">Enter British Pounds (£)</label>
             <input type="number" class="form-control" 
-                   id="pounds" asp-for="Pounds" value="100" required />
+                   id="pounds" asp-for="Pounds" required />
             
             <label for="euros">Calculated Euros (&euro;)</label>
             <input type="text" id="euros" class="form-control" 
-                   value="@Model.Euros.ToString(money)" readonly />
+                   value="@Model.Euros.ToString(Model.currencyFormat, Model.Portugal)" readonly />
             <br/>
             <button class="btn btn-success" type="submit">Calculate</button>
             

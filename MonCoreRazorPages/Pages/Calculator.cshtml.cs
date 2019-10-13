@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,10 @@ namespace MonCoreRazorPages.Pages
         public Decimal Pounds { get; set; }
 
         public Decimal Euros { get; set; }
+
+        public CultureInfo Portugal = new CultureInfo("pt-PT");
+
+        public string currencyFormat = "C2";
 
         public void OnGet()
         {
